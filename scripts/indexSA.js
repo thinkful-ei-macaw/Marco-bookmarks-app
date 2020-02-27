@@ -11,15 +11,10 @@ import data from "./datumSA.js"
 
 
 
-
-
-
-
-
 function handleBookmarks(){
-events.render()
-
-
+events.render(),
+events.bindEventListeners(),
+events.getBookmarks()
 }
  
 $(handleBookmarks);

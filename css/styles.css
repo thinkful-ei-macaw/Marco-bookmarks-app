@@ -1,58 +1,96 @@
 
 * {
+  
+    
     box-sizing: border-box;
+    font-family: 'BioRhyme';
   }
   
-
-
-.screen{
-    background-color: teal;
-   
-    border-color: bisque;
-    padding: 100px;
-    border: 30px solid turquoise ;
-}   
-H1{
-text-align: center;
-    color: bisque;
+main{
+    background-color: black;
 }
-.class{
+.screen{
+    background-color: black;
+   text-align: center;
+    
+    padding: 30px;
+    
+}   
+H1,h2, p{
+    text-align: center;
+    color: coral;
+    display: inline-block
+}
+p{
+    padding-right: 20px;
+}
 
-    display: block;
-  width: 100%;
-  border: none;
-  background-color: #4CAF50;
-  padding: 14px 28px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
+
+h2 {
+
+    margin-right: 30px;
 }
 .botones {
-    display: flex;
+    display: flexbox;
     flex-direction: row;
     border-radius:5%;
     padding: 5px;
     justify-content: space-around;
     font-size: 30px;
     text-align: center;
+    color:  black
+}
     
+.containerforli{
+display: flexbox;
+background-color: dimgray;
+border-radius: 30%;
+           
+    }
 
+.control {
+    text-align: center;
 }
 
-ul{
-    list-style-type: none;
-    border:5px solid black;
-    margin: 0;
-    
-    
-}
+
+
 
 li { 
-    margin: 0;
+ 
+list-style: none;
+padding: 15px;
+    
 }
 
 h6 {
 
     margin-inline-end: left;
 }
+
+
+.listdisplay {
+    border: 10px solid darkslateblue;
+    text-align: center;
+
+}
+
+
+
+button {
+    
+text-align: center;
+color: darkslateblue;
+border-radius: 3px
+
+}
+button:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+
+  .containerforlibottom{
+      color: white;
+      margin-right: 30px;
+  }
 
