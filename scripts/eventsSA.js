@@ -38,7 +38,7 @@ function renderStartPage() {
     <ul id="results-list">
     </ul>
     </section>
-    <h6>Made in NYC by Coronado Developments</h6>
+    <h6>Made in NYC</h6>
     
     </form>
     
@@ -55,7 +55,7 @@ const getItemIdFromElement = function(item) {
 function generateBookmarkString(bookmark){
 
 
-
+//filterRatings();
 
 
   
@@ -90,13 +90,12 @@ return `
 
 
 
-// function filterRatings(){
-//   let id = bkmD.bookmarks.find(item => item.id === id)
+function filterRatings(){
+let newRating = parseInt($(".Rating").val())
+  //newRatingList = data.bkmD.bookmarks.filter(line => data.bkmD.bookmarks.rating <= newRating);
 
-
-
-
-// }
+console.log(newRating);
+ }
 
 
 
@@ -171,11 +170,11 @@ function addItemPage() {
           
                       <div>
                           <label for= "Rating">Rating(s):</label>
-                          <select class= "Rating" name="Rating" required>
+                          <select class= "rating" name="rating" required>
                           <option selected disabled>Select Ratings</option>
                                   <option value=5>★★★★★</option>
                                   <option value=4>★★★★☆</option> 
-                                  <option value=3>★★★☆☆</p> 
+                                  <option value=3>★★★☆☆</option> 
                                   <option value=2>★★☆☆☆</option> 
                                   <option value=1>★☆☆☆☆</option> 
                           </select>       
@@ -260,9 +259,12 @@ function deleteButtonHandler(){
     })
 }
 
-
-
-
+function filterddvalue(){
+      $("main").on("change", ".rating", event => {
+        console.log('I see youre selecting a rating');
+        }
+      )
+ };        
 
 function expandedViewHandler() {
   $("main").on("click", ".clickforexpanded", event => {
@@ -281,12 +283,15 @@ const bindEventListeners = function() {
     addBookmarkHandler(),
     expandedViewHandler(),
     goingBacktoStart(),
-    deleteButtonHandler()
+    deleteButtonHandler(),
+    filterddvalue()
 };
 
 export default {
   render,
   bindEventListeners,
   addingBookmark,
-  getBookmarks
+  getBookmarks,
+  filterRatings
+
 };

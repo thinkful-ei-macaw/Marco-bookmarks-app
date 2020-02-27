@@ -14,7 +14,8 @@ import data from "./datumSA.js"
 function handleBookmarks(){
 events.render(),
 events.bindEventListeners(),
-events.getBookmarks()
+events.getBookmarks(),
+events.filterRatings()
 }
  
 $(handleBookmarks);
