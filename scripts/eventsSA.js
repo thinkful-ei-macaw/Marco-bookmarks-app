@@ -22,6 +22,15 @@ function renderStartPage() {
             </div>
             <div filterdiv>
                 <button class='filter'>Filter Your Bookmarks</button>
+                <select id="filter" value="Rating" class="dropdown">
+                    <option value="1">Current filter: ${data.bkmD.filter}</option>
+                        <option value="0">No filter</option>
+                        <option value=5>★★★★★</option>
+                        <option value=4>★★★★☆</option> 
+                        <option value=3>★★★☆☆</option> 
+                        <option value=2>★★☆☆☆</option> 
+                        <option value=1>★☆☆☆☆</option>
+                </select> 
             </div>
     </div>
     
@@ -44,6 +53,7 @@ const getItemIdFromElement = function(item) {
 
 
 function generateBookmarkString(bookmark){
+
 
 if(bookmark.expanded){
 
@@ -75,14 +85,13 @@ return `
         };
 
 
-
-function filterRatings(){
-
-
+//function filterRatings(){
+//   let id = bkmD.bookmarks.find(item => item.id === id)
 
 
 
-}
+
+// }
 
 
 
@@ -237,6 +246,7 @@ function deleteButtonHandler(){
     $("main").on("click", ".clicktodelete", event => {
     let id = getItemIdFromElement(event.currentTarget);
     let idfordel = data.findById(id);
+    
     console.log(idfordel)
     console.log('Do you want to deleteme???');
     data.findAndDelete(id);
