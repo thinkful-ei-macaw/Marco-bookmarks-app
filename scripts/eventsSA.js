@@ -55,6 +55,10 @@ const getItemIdFromElement = function(item) {
 function generateBookmarkString(bookmark){
 
 
+
+
+
+  
 if(bookmark.expanded){
 
 return`
@@ -85,7 +89,8 @@ return `
         };
 
 
-//function filterRatings(){
+
+// function filterRatings(){
 //   let id = bkmD.bookmarks.find(item => item.id === id)
 
 
