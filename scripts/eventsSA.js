@@ -90,11 +90,16 @@ return `
 
 
 
-function filterRatings(){
-let newRating = parseInt($(".Rating").val())
-  //newRatingList = data.bkmD.bookmarks.filter(line => data.bkmD.bookmarks.rating <= newRating);
+function filterRatings(newRating){
+
+const newRatingList = data.bkmD.bookmarks.filter(bookmark => bookmark.rating <= newRating);
+console.log(data.bkmD.bookmarks);
+data.bkmD.bookmarks = newRatingList;
+render();
 
 console.log(newRating);
+
+console.log(newRatingList);
  }
 
 
@@ -260,11 +265,18 @@ function deleteButtonHandler(){
 }
 
 function filterddvalue(){
-      $("main").on("change", ".rating", event => {
+      $("main").on("change", ".dropdown", event => {
+        let newRating = ($(".dropdown").val())
+        filterRatings(newRating);
         console.log('I see youre selecting a rating');
         }
       )
- };        
+ };
+ 
+ 
+
+  
+
 
 function expandedViewHandler() {
   $("main").on("click", ".clickforexpanded", event => {
