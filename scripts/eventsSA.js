@@ -53,14 +53,7 @@ const getItemIdFromElement = function(item) {
 
 
 function generateBookmarkString(bookmark){
-
-
-//filterRatings();
-
-
-  
 if(bookmark.expanded){
-
 return`
     <li data-item-id="${bookmark.id}">
         <div class="containerforli">
@@ -72,8 +65,7 @@ return`
             <div class="expandedview">
             <p>${bookmark.url}</p>
             <p>${bookmark.desc}</p>
-         </div>
-        
+         </div>        
     </li>`   }
         
 else {
@@ -84,14 +76,15 @@ return `
         <p>${bookmark.rating}</p>
         <button class="clickforexpanded">More</button>
     </li>`
-         }
+      }
 
-        };
+};
 
 
 
 function filterRatings(newRating){
-
+//newRating = ($(".dropdown").val());
+//let newRating = parseInt($(".").val())
 const newRatingList = data.bkmD.bookmarks.filter(bookmark => bookmark.rating <= newRating);
 console.log(data.bkmD.bookmarks);
 data.bkmD.bookmarks = newRatingList;
@@ -120,7 +113,7 @@ function displayFetchResults() {
 function addingBookmark() {
   const newTitle = $(".bookmark-title-input").val();
   const newUrl = $(".bookmark-url").val();
-  const newRating = parseInt($(".Rating").val());
+  const newRating = parseInt($(".rating").val());
   let newDesc = $(".addBookmarkDescription").val();
 
   $(".bookmark-title-input").val("");
@@ -256,7 +249,7 @@ function deleteButtonHandler(){
     let id = getItemIdFromElement(event.currentTarget);
     let idfordel = data.findById(id);
     
-    console.log(idfordel)
+    console.log('making sure this deletes', idfordel)
     console.log('Do you want to deleteme???');
     data.findAndDelete(id);
     // render the updated shopping list
@@ -266,8 +259,9 @@ function deleteButtonHandler(){
 
 function filterddvalue(){
       $("main").on("change", ".dropdown", event => {
-        let newRating = ($(".dropdown").val())
-        filterRatings(newRating);
+        let userRating = parseInt($(".dropdown").val())
+        console.log('look', userRating);
+        filterRatings(userRating);
         console.log('I see youre selecting a rating');
         }
       )

@@ -33,6 +33,7 @@ const bkmD = {
 
   const findAndDelete = function (id) {
     this.bkmD.bookmarks = this.bkmD.bookmarks.filter(currentItem => currentItem.id !== id);
+    
   };
 
 
